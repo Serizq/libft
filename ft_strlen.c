@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+typedef unsigned long size_t; // preguntar si hay que añadir librería <stddef.h> o crear alias: typedef unsigned long size_t  //
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;
