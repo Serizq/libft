@@ -14,14 +14,14 @@
 
 typedef unsigned long size_t;
 
-size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t size)
 {
 	size_t	i;
         int	src_len;
 
 	i = 0;
 	src_len = ft_strlen(src);
-	if (dstsize == 0)
+	if (size == 0)
 		return (src_len);
 	while (src[i] && i < dstsize - 1)
 	{
