@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seizquie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 19:57:36 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/07 18:13:26 by seizquie         ###   ########.fr       */
+/*   Created: 2024/10/04 17:21:26 by seizquie          #+#    #+#             */
+/*   Updated: 2024/10/04 17:21:39 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char    *ft_strrchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*p;
+    int i;
 
-	i = 0;
-	p = (char *)s;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
+    i = ft_strlen(s);
+
+    if(s == NULL)
+    {
+        return(NULL);
+    }
+    while(i >= 0)
+    {
+        if(s[i] == (char)c)
+        {
+            return((char *)&s[i]);
+        }
+        i--;
+    }
+    return(NULL);
 }
-/*int	main(void)
+/*
+int main()
 {
-	char	str[] = "42 Madrid";
-	size_t	len = 3;
+    char *str = "ABCADE";
 
-	printf("Original: %s\n", str);
-	ft_bzero(str, len);
-	printf("Final text: %s\n", str);
-	return (0); 
-}*/
+    printf("value: %s\n", ft_strrchr(str, 'j'));
+    return(0);
+}
+*/

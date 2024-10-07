@@ -6,7 +6,7 @@
 /*   By: seizquie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:55:51 by seizquie          #+#    #+#             */
-/*   Updated: 2024/09/24 14:41:15 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/09/27 20:29:40 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size <= dst_len)
 		return (size + src_len);
-	while (src[i] && dest_len + i < size - 1)
+	while (src[i] && dst_len + i < size - 1)
 	{
-		dst[dest_len + i] = src[i];
+		dst[dst_len + i] = src[i];
 		i++;
 	}
 	dst[dst_len + i] = '\0';
