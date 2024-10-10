@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seizquie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:31:57 by seizquie          #+#    #+#             */
-/*   Updated: 2024/09/25 19:43:53 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/08 19:07:14 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdio.h>
+# include <stdint.h>
 
 
 int	    ft_isalpha(int c);
