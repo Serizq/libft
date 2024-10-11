@@ -1,14 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: seizquie <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 17:31:57 by seizquie          #+#    #+#             */
-/*   Updated: 2024/09/25 18:10:56 by seizquie         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    libft.hcopy                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/25 17:31:57 by seizquie          #+#    #+#              #
+#    Updated: 2024/10/11 19:27:04 by seizquie         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -24,7 +24,8 @@ int     ft_strlcat(char *dst, const char *src, size_t size);
 int     ft_toupper(int c);
 int     ft_tolower(int c);
 void    *ft_memset(void *s, int c, size_t n);
-
+// n empieza con el valor asignado en el while
+		//pero ya entra en _dst y _src como n-1 (post decrement operator) esto corresponde a memmove n--
 
 
 

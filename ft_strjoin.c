@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 19:57:36 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/11 19:16:41 by seizquie         ###   ########.fr       */
+/*   Created: 2024/10/11 18:34:56 by seizquie          #+#    #+#             */
+/*   Updated: 2024/10/11 19:12:38 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*p;
+	char	*m;
+	size_t	len;
 
-	i = 0;
-	p = (char *)s;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
+	len = ft_strlen(s1) + ft_strlen(s2);
+	m = malloc((len + 1) * sizeof(char));
+	if ((!s1) || (!s2))
+		return (NULL);
+	if (!m)
+		return (NULL);
+	ft_strlcpy(m, s1, len + 1);
+	ft_strlcat(m, s2, len + 1);
+	return (m);
 }
-/*int	main(void)
+/*
+int	main(void)
 {
-	char	str[] = "42 Madrid";
-	size_t	len = 3;
+	char	*str1;
+	char	*str2;
+	char	*m;
 
-	printf("Original: %s\n", str);
-	ft_bzero(str, len);
-	printf("Final text: %s\n", str);
+	str1 = "Hola";
+	str2 = " Sergio";
+	m = ft_strjoin(str1, str2);
+	printf("%s\n", m);
 	return (0);
 }*/

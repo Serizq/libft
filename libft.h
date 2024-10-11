@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:31:57 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/08 19:07:14 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/11 19:58:49 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <stdlib.h>
 
 
 int	    ft_isalpha(int c);
@@ -39,6 +40,12 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_atoi(const char *str);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 
 

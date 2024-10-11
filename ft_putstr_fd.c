@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 19:57:36 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/11 19:16:41 by seizquie         ###   ########.fr       */
+/*   Created: 2024/10/11 17:34:54 by seizquie          #+#    #+#             */
+/*   Updated: 2024/10/11 18:06:59 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t			i;
-	unsigned char	*p;
-
-	i = 0;
-	p = (char *)s;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
-/*int	main(void)
-{
-	char	str[] = "42 Madrid";
-	size_t	len = 3;
-
-	printf("Original: %s\n", str);
-	ft_bzero(str, len);
-	printf("Final text: %s\n", str);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:56:48 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/08 19:09:50 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/11 19:22:55 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	_totalsize;
 	void	*ptr;
-// SIZE_MAX es el valor máximo de size_t
-	if(size != 0 && nmemb > SIZE_MAX / size) // compruebo que no hay desbordamiento
+
+	if (size != 0 && nmemb > SIZE_MAX / size)
 	{
 		return (NULL);
 	}
 	_totalsize = nmemb * size;
 	ptr = malloc(_totalsize);
-	if (ptr == NULL);
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
