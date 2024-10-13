@@ -6,28 +6,28 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:56:48 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/11 19:22:55 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/13 20:11:59 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	_totalsize;
+	size_t	total_size;
 	void	*ptr;
 
-	if (size != 0 && nmemb > SIZE_MAX / size)
+	if (size != 0 && count > SIZE_MAX / size)
 	{
 		return (NULL);
 	}
-	_totalsize = nmemb * size;
-	ptr = malloc(_totalsize);
+	total_size = count * size;
+	ptr = malloc(total_size);
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	ft_bzero(ptr, _totalsize);
+	ft_bzero(ptr, total_size);
 	return (ptr);
 }
 /*int	main(void)

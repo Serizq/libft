@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:19:14 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/12 16:09:37 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/13 17:55:06 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimed;
+	char	*trimmed;
 	size_t	start;
 	size_t	end;
 
@@ -26,11 +26,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > 0 && ft_strchr(set, s1[end]))
 		end--;
-	trimed = ft_substr(s1, start, end - start + 1);
-	if (trimed == NULL)
+	trimmed = ft_substr(s1, start, end - start + 1);
+	if (trimmed == NULL)
 		return (NULL);
-	else
-		return (trimed);
+	return (trimmed);
 }
 /*
 int	main(void)

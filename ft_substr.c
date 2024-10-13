@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:33:30 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/12 16:08:28 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/13 17:57:59 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	count;
+	size_t	s_len;
 
+	s_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	if (start >= s_len)
 		len = 0;
-	if (ft_strlen(s) - start < len)
-		len = ft_strlen(s) - start;
+	if (s_len - start < len)
+		len = s_len - start;
 	str = (char *)malloc((len + 1) * sizeof(char));
 	count = 0;
 	if (!str)

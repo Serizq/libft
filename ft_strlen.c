@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seizquie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 18:16:18 by seizquie          #+#    #+#             */
-/*   Updated: 2024/09/19 18:50:49 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:10:28 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,11 @@ size_t	ft_strlen(const char *s)
 		len++;
 	return (len);
 }
+/*
+int main()
+{
+	char *str = "sergio";
+	
+	printf("%li\n", ft_strlen(str));
+	return (0);
+}*/

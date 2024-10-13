@@ -1,40 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 18:07:42 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 21:14:45 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:05:41 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+static int	count_digits(int n)
 {
-	size_t			i;
-	unsigned char	*p;
+	int	len;
 
-	i = 0;
-	p = (unsigned char *)s;
-	while (i < n)
+	len = 0;
+	if (n < 0)
+		len++;
+	while (n != 0)
 	{
-		p[i] = (unsigned char *)c;
-		i++;
+		n = n / 10;
+		len++;
 	}
-	return (s);
+	return (len);
 }
 
-/*int	main(void)
+char	*ft_itoa(int n)
 {
-	char	str[] = "Sergio 42";
-	char	c = 'a';
-	size_t	len = 6;
+	char	*n_string;
+	int		len;
+	int		n_copy;
 
-	printf("Original text: %s\n",str);
-	ft_memset(str, c, len);
-	printf("Final text: %s\n", str);
+	len = count_digits(n);
+	if (n < 0)
+		n_copy = -n;
+	else
+		n_copy = n;
+	n_string = (char *)malloc((len + 1) * sizeof(char));
+	if (!n_string)
+		return (NULL);
+	n_string[len--] = '\0';
+	while (len >= 0)
+	{
+		n_string[len] = n_copy % 10 + '0';
+		n_copy = n_copy / 10;
+		len--;
+	}
+	if (n < 0)
+		n_string[0] = '-';
+	return (n_string);
+}
+/*
+int	main(void)
+{
+	printf ("Número en carácteres: '%s'.\n", ft_itoa(12));
 	return (0);
 }*/

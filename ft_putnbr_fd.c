@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 18:55:51 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 17:53:00 by seizquie         ###   ########.fr       */
+/*   Created: 2024/10/08 17:56:48 by seizquie          #+#    #+#             */
+/*   Updated: 2024/10/13 17:43:50 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = 0;
-	if (size <= dst_len)
-		return (size + src_len);
-	while (src[i] != '\0' && dst_len + i < size - 1)
+	if (n == -2147483648)
 	{
-		dst[dst_len + i] = src[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = 147483648;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }
+
+/*int	main(void)
+{
+	ft_putnbr_fd(-123, 1);
+	return (0);
+}*/
