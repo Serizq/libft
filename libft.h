@@ -6,17 +6,19 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:31:57 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 21:06:04 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:37:17 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <ctype.h>
 # include <stddef.h>
 # include <stdint.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
