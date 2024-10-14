@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 18:07:42 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 21:14:45 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:50:43 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	p = (unsigned char *)s;
 	while (i < n)
 	{
-		p[i] = (unsigned char *)c;
+		p[i] = (unsigned char )c;
 		i++;
 	}
 	return (s);

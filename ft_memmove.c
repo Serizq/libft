@@ -6,19 +6,17 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:16:34 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 21:08:04 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:44:00 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t				i;
 	unsigned char		*_dst;
 	unsigned const char	*_src;
 
-	i = 0;
 	_dst = (unsigned char *)dst;
 	_src = (unsigned const char *)src;
 	if (dst == NULL || src == NULL)
