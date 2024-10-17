@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 18:34:56 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 17:51:28 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:02:17 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	new_string = malloc((len + 1) * sizeof(char));
+	new_string = malloc((len) * sizeof(char));
 	if ((!s1) || (!s2))
 		return (NULL);
 	if (!new_string)

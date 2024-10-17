@@ -6,7 +6,7 @@
 /*   By: seizquie <seizquie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 18:07:42 by seizquie          #+#    #+#             */
-/*   Updated: 2024/10/13 21:05:41 by seizquie         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:46:00 by seizquie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	count_digits(int n)
 	int	len;
 
 	len = 0;
-	if (n < 0)
+	if (n <= 0)
 		len++;
 	while (n != 0)
 	{
@@ -31,16 +31,17 @@ char	*ft_itoa(int n)
 {
 	char	*n_string;
 	int		len;
-	int		n_copy;
+	long	n_copy;
 
+	n_copy = (long)n;
 	len = count_digits(n);
-	if (n < 0)
-		n_copy = -n;
-	else
-		n_copy = n;
 	n_string = (char *)malloc((len + 1) * sizeof(char));
 	if (!n_string)
 		return (NULL);
+	if (n < 0)
+	{
+		n_copy = -n_copy;
+	}
 	n_string[len--] = '\0';
 	while (len >= 0)
 	{
